@@ -1,4 +1,1 @@
-
-export function calculateWinner() {
-    
-}
+export function calculateWinner() {}
