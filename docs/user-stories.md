@@ -41,8 +41,16 @@ What a player can do in the app.
 
 13. **Be told when an action is invalid** — As a player, I want a clear error message when I try something illegal (placing on an occupied square, picking up an opponent's piece, sliding to a non-adjacent square, etc.) so I can correct my next click.
 
+14. **See the move history** — As a player, I want a scrollable list of moves played this game so I can review what just happened and learn from my games.
+
 ## Single-player mode
 
-14. **Play against the computer** — As a player without a partner, I want to play the game against the computer so I can practice on my own.
+15. **Play against the computer** — As a player without a partner, I want to play the game against the computer so I can practice on my own.
+    - The computer plays only legal moves and takes piece removals when it forms a mill.
 
-15. **Computer obeys the rules** — As a player, I want the computer to make only legal moves and to take piece removals when it forms a mill, so the single-player game stays fair and consistent with the rules.
+16. **Pick a difficulty** — As a player, I want to pick how strong the computer is (Easy / Medium / Hard) so I can match the challenge to my level.
+    - **Easy** plays a shallow search and occasionally a random move — beatable for beginners.
+    - **Medium** plays a deeper fixed-depth search — a solid opponent for casual play.
+    - **Hard** searches as deep as it can within a short time budget — a strong opponent.
+
+17. **Know when the computer is thinking** — As a player, I want a visible "thinking" indicator while the computer is choosing its move so I know the game hasn't frozen.

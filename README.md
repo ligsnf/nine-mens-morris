@@ -6,14 +6,19 @@ Built with React + TypeScript + Vite + Tailwind. AI runs entirely in the browser
 
 ## How to run
 
-Make sure you have [node](https://nodejs.org/) installed.
+Make sure you have [Node.js](https://nodejs.org/) installed.
+
 1. clone repository
-2. open terminal
-4. run "npm install" command (install dependencies)
-5. run "npm run build" command (generate "executables")
-6. run "npm run preview" command (run/serve "executables")
-7. ctrl + click on link to "http://localhost:4173/" in the terminal or open manually in browser
-8. play the game
+2. open terminal in the project folder
+3. run `npm install` to install dependencies
+4. run `npm run dev` and open the link printed in the terminal to play
+5. or, run `npm run build` followed by `npm run preview` to serve a production build
+
+## Documentation
+
+- [Architecture](./docs/architecture.md) — game core, AI engine, Web Worker boundary.
+- [Game rules](./docs/game-rules.md) — Nine Men's Morris rules as implemented.
+- [User stories](./docs/user-stories.md) — what a player can do.
 
 ## Coding Practices
 
