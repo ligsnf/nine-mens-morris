@@ -21,7 +21,7 @@ const GameDisplay = () => {
       setShowGameOver(true);
     }
 
-    return () => { };
+    return () => {};
   }, [game]);
 
   const startNewGame = () => {
@@ -43,11 +43,7 @@ const GameDisplay = () => {
         case "remove":
           game
             .getBoard()
-            .removeSelectedPiece(
-              index,
-              game.getCurrentPlayer(),
-              game.getOtherPlayer()
-            );
+            .removeSelectedPiece(index, game.getCurrentPlayer(), game.getOtherPlayer());
           break;
         case "place":
           game.getBoard().placeSelectedPiece(index, game.getCurrentPlayer());
@@ -78,7 +74,7 @@ const GameDisplay = () => {
     // Update the game state
     const gameState = game.getState();
     setGame(new Game(gameMode, gameState));
-  }
+  };
 
   // Text to show above board
   let statusText;
@@ -108,10 +104,7 @@ const GameDisplay = () => {
         break;
     }
   } else {
-    statusText = game.checkGameOver(
-      game.getCurrentPlayer(),
-      game.getOtherPlayer()
-    );
+    statusText = game.checkGameOver(game.getCurrentPlayer(), game.getOtherPlayer());
   }
 
   // Render the game board
@@ -121,30 +114,22 @@ const GameDisplay = () => {
         <GameOverModal
           setShowModal={setShowGameOver}
           setNewGame={startNewGame}
-          gameOverMessage={game.checkGameOver(
-            game.getCurrentPlayer(),
-            game.getOtherPlayer()
-          )}
+          gameOverMessage={game.checkGameOver(game.getCurrentPlayer(), game.getOtherPlayer())}
           winningPlayer={game.getWinner()}
         />
       )}
-      {showErrorAlert && (
-        <ErrorAlert setShowAlert={setShowErrorAlert} errorMsg={errorMsg} />
-      )}
-      <div className="flex flex-col items-center justify-center relative">
+      {showErrorAlert && <ErrorAlert setShowAlert={setShowErrorAlert} errorMsg={errorMsg} />}
+      <div className="relative flex flex-col items-center justify-center">
         {gameMode == GameType.Unset && (
           <div className="absolute inset-0 z-10">
             <ChooseGameMode chooseGameMode={chooseGameMode} />
           </div>
         )}
-        <div className="mb-10 flex bg-amber-100 p-4 rounded text-black w-96">
+        <div className="mb-10 flex w-96 rounded-sm bg-amber-100 p-4 text-black">
           <div className="flex-1">
-            <PieceUI
-              piece={new Piece(game.getCurrentPlayer().getColour())}
-              isValidMove={false}
-            />
+            <PieceUI piece={new Piece(game.getCurrentPlayer().getColour())} isValidMove={false} />
           </div>
-          <h3 className="flex-[10] justify-center text-lg">{statusText}</h3>
+          <h3 className="flex-10 justify-center text-lg">{statusText}</h3>
         </div>
         <section className="flex justify-between gap-12">
           <div className="grid items-center">

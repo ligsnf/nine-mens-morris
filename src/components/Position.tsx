@@ -1,28 +1,31 @@
-import React from 'react'
-import { Position } from '../models/Position'
-import Piece from './Piece'
+import React from "react";
+import { Position } from "../models/Position";
+import Piece from "./Piece";
 
 type Props = {
-    position: Position | null
-}
+  position: Position | null;
+};
 
 const PositionComponent = ({ position }: Props) => {
+  let content = <div></div>;
 
-    let content = <div></div>
+  if (position) {
+    content = (
+      <div
+        className={`flex h-4 w-4 rounded-full bg-yellow-950 ${position.getIsValidMove() && "group-hover:shadow-[0_0px_4px_4px_rgba(34,197,94,1)]"}`}
+      >
+        <div
+          className={`grow animate-pulse rounded-full ${position.getIsValidMove() && "shadow-[0_0px_4px_4px_rgba(34,197,94,1)]"}`}
+        ></div>
+      </div>
+    );
+  }
 
-    if (position) {
-        content = (<div className={`bg-yellow-950 rounded-full w-4 h-4 flex ${position.getIsValidMove() && "group-hover:shadow-[0_0px_4px_4px_rgba(34,197,94,1)]"}`}>
-            <div className={`grow rounded-full animate-pulse ${position.getIsValidMove() && "shadow-[0_0px_4px_4px_rgba(34,197,94,1)]"}`}></div>
-        </div>)
-    } 
+  if (position?.getPiece()) {
+    content = <Piece piece={position.getPiece()} isValidMove={position.getIsValidMove()} />;
+  }
 
-    if (position?.getPiece()) {
-        content = <Piece piece={position.getPiece()} isValidMove={position.getIsValidMove()} />
-    }
+  return content;
+};
 
-    return (
-        content
-    )
-}
-
-export default PositionComponent
+export default PositionComponent;
