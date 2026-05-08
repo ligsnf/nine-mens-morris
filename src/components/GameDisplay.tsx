@@ -137,14 +137,14 @@ const GameDisplay = () => {
             <ChooseGameMode chooseGameMode={chooseGameMode} />
           </div>
         )}
-        <div className="mb-10 flex bg-amber-100 p-4 rounded text-black w-96">
+        <div className="mb-10 flex bg-amber-100 p-4 rounded-sm text-black w-96">
           <div className="flex-1">
             <PieceUI
               piece={new Piece(game.getCurrentPlayer().getColour())}
               isValidMove={false}
             />
           </div>
-          <h3 className="flex-[10] justify-center text-lg">{statusText}</h3>
+          <h3 className="flex-10 justify-center text-lg">{statusText}</h3>
         </div>
         <section className="flex justify-between gap-12">
           <div className="grid items-center">

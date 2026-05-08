@@ -7,11 +7,11 @@ type Props = {
 
 const ErrorAlert = ({ setShowAlert, errorMsg }: Props) => {
     return (
-        <div id="hs-basic-modal" onClick={() => setShowAlert(false)} className="hs-overlay w-full h-full fixed top-0 left-0 z-[60] overflow-x-hidden overflow-y-auto bg-black/20">
+        <div id="hs-basic-modal" onClick={() => setShowAlert(false)} className="hs-overlay w-full h-full fixed top-0 left-0 z-60 overflow-x-hidden overflow-y-auto bg-black/20">
             <div className="hs-overlay-open:opacity-100 hs-overlay-open:duration-500 transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto">
                 <div id="dismiss-alert" onClick={(e) => {e.stopPropagation()}} className="hs-removing:translate-x-5 hs-removing:opacity-0 transition duration-300 bg-red-50 border border-red-200 rounded-md p-4" role="alert">
                     <div className="flex">
-                        <div className="flex-shrink-0">
+                        <div className="shrink-0">
                             <svg className="h-4 w-4 text-red-400 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                 <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
                             </svg>
@@ -26,7 +26,7 @@ const ErrorAlert = ({ setShowAlert, errorMsg }: Props) => {
                                 <button
                                     type="button"
                                     onClick={() => setShowAlert(false)}
-                                    className="inline-flex bg-red-50 rounded-md p-1.5 text-red-500 hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-red-50 focus:ring-red-600"
+                                    className="inline-flex bg-red-50! rounded-md p-1.5 text-red-500 hover:bg-red-100! focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-offset-red-50 focus:ring-red-600"
                                     data-hs-remove-element="#dismiss-alert"
                                 >
                                     <span className="sr-only">Dismiss</span>
